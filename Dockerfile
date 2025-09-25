@@ -7,8 +7,11 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package files from website directory
-COPY website/package.json website/package-lock.json* ./
-RUN npm install --only=production && npm cache clean --force
+COPY website/package.json ./
+# Copy package-lock.json from root if it exists, or from website if it exists there
+COPY package-lock.json* website/package-lock.json* ./
+# Install ALL dependencies (including devDependencies) for building
+RUN npm install && npm cache clean --force
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -34,11 +37,11 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy public assets
-COPY --from=builder /app/public ./public
+# Copy public assets (check if exists first)
+COPY --from=builder /app/public* ./public/
 
 # Set the correct permission for prerender cache
-RUN mkdir .next
+RUN mkdir -p .next
 RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
