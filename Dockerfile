@@ -7,8 +7,8 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package files from website directory
-COPY website/package.json website/package-lock.json ./
-RUN npm ci --only=production && npm cache clean --force
+COPY website/package.json website/package-lock.json* ./
+RUN npm install --only=production && npm cache clean --force
 
 # Rebuild the source code only when needed
 FROM base AS builder
