@@ -14,6 +14,18 @@ services:
   envs:
   - key: NODE_ENV
     value: production
+  - key: RESEND_API_KEY
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: SALES_EMAIL
+    value: enquiry@essen.sg
+    scope: RUN_AND_BUILD_TIME
+  - key: NEXT_PUBLIC_WHATSAPP
+    value: "6591234567"
+    scope: RUN_AND_BUILD_TIME
+  - key: NEXT_PUBLIC_CALENDLY_URL
+    value: "https://calendly.com/enquiry-essen/appointment"
+    scope: RUN_AND_BUILD_TIME
   - key: GOOGLE_SHEETS_PRIVATE_KEY
     scope: RUN_TIME
     type: SECRET
@@ -21,8 +33,5 @@ services:
     scope: RUN_TIME
     type: SECRET
   - key: GOOGLE_SHEETS_SPREADSHEET_ID
-    scope: RUN_TIME
-    type: SECRET
-  - key: RESEND_API_KEY
     scope: RUN_TIME
     type: SECRET
