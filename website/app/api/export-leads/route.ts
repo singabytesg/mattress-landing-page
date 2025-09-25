@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server'
 // Simple CSV export endpoint for downloading leads
 // Access at: /api/export-leads?key=YOUR_ADMIN_KEY
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: Request) {
   try {
     // Simple security check
