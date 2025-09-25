@@ -1,19 +1,20 @@
 name: essen-mattress-landing-page
 services:
 - name: web
-  source_dir: /website
+  # Switch to Docker instead of Node.js buildpack
+  dockerfile_path: Dockerfile
+  source_dir: /
   github:
     repo: ESSEN/mattress-landing-page
     branch: main
-  run_command: npm start
-  build_command: npm run build
-  environment_slug: node-js
   instance_count: 1
   instance_size_slug: basic-xxs
   http_port: 3000
   envs:
   - key: NODE_ENV
     value: production
+  - key: NEXT_TELEMETRY_DISABLED
+    value: "1"
   - key: RESEND_API_KEY
     scope: RUN_AND_BUILD_TIME
     type: SECRET

@@ -1,25 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Skip build errors for deployment
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Enable standalone output for Docker
+  output: 'standalone',
+
+  // Production optimizations
   compiler: {
-    styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Disable styled-jsx to avoid React context issues
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'styled-jsx': false,
-      'styled-jsx/style': false,
-    }
-    return config
-  }
+
+  // Image optimization for Docker
+  images: {
+    domains: [],
+    unoptimized: false,
+  },
+
+  // Environment variables
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
 };
 
 module.exports = nextConfig;

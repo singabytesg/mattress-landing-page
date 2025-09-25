@@ -1,0 +1,64 @@
+# Dependencies
+**/node_modules
+**/.pnp
+**/.pnp.js
+
+# Testing
+**/coverage
+
+# Next.js
+**/.next/
+**/out/
+
+# Production
+**/build
+
+# Environment files
+**/.env*.local
+**/.env
+!**/.env.example
+
+# Debug logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Local dev
+**/.vscode
+**/.idea
+**/.DS_Store
+
+# Git
+**/.git
+**/.gitignore
+
+# Documentation and project files
+**/README.md
+**/CHANGELOG.md
+**/LICENSE
+**/*.md
+**/.claude
+
+# Development and research files
+**/brandguide.md
+**/casper-research.md
+**/cellini-nightingale-research.md
+**/digital-craftsmanship-showcase.html
+**/essen-mattress-showcase.html
+**/essen-mattress-strategy.md
+**/nectar-sleep-research.md
+**/rapid-implementation-plan.md
+**/README-website.md
+**/SETUP-GOOGLE-SHEETS.md
+**/showroom-first-strategy.md
+**/SIMPLE-SETUP.md
+**/technical-implementation-plan.md
+**/tempur-sg-research.md
+**/woosa-sleep-research.md
+
+# Temp files
+**/tmp
+**/temp
+
+# Logs
+**/*.log
