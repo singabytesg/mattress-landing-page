@@ -1,4 +1,4 @@
-import { google } from '@googleapis/sheets'
+import { google } from 'googleapis'
 
 interface LeadData {
   name: string
