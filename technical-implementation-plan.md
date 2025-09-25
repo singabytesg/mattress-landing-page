@@ -5,7 +5,7 @@
 
 ## Executive Summary
 
-This simplified technical plan outlines a rapid implementation of the ESSEN mattress landing page using Next.js 14, TypeScript, and Tailwind CSS. **No database required** - leads go directly to email and Google Sheets, with Calendly (free tier) handling all booking functionality. This approach can be built in **3-5 days** instead of 14 days.
+This simplified technical plan outlines a rapid implementation of the ESSEN mattress landing page using Next.js 14, TypeScript, and Tailwind CSS. **No database required** - leads go directly to email and Google Sheets, with Calendly (free tier) handling all booking functionality. This approach can be built in **3-5 days** 
 
 ---
 

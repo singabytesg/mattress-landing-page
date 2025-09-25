@@ -1,8 +1,41 @@
 # Google Sheets Setup Guide
 
-This guide will help you set up Google Sheets integration for storing leads.
+This guide provides multiple options for storing leads, from simple to advanced.
 
-## Step 1: Create Google Sheet
+## Option A: Email-Only (Simplest - No Google Sheets Required)
+
+If you don't have admin access to Google Cloud, just use email notifications:
+
+1. Skip Google Sheets entirely
+2. Only configure Resend email in `.env.local`:
+   ```env
+   RESEND_API_KEY=re_YOUR_API_KEY
+   SALES_EMAIL=sales@essen.sg
+   ```
+3. All leads will be emailed to your sales team
+4. Manually add leads to your CRM/spreadsheet from emails
+
+## Option B: Zapier/Make Integration (No Coding)
+
+Use a no-code automation tool:
+
+1. Keep the current simple API
+2. Use Zapier or Make.com to:
+   - Trigger on new emails from Resend
+   - Automatically add rows to Google Sheets
+   - No Google Cloud setup required
+3. Free tier available on both platforms
+
+## Option C: Public Google Form (Workaround)
+
+1. Create a Google Form with same fields
+2. Link it to a Google Sheet
+3. Modify the lead API to submit to Google Form
+4. No authentication needed
+
+## Option D: Full Google Sheets Integration (Requires Admin)
+
+### Step 1: Create Google Sheet
 
 1. Go to [Google Sheets](https://sheets.google.com)
 2. Create a new spreadsheet

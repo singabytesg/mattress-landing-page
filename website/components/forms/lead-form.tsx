@@ -38,7 +38,7 @@ export default function LeadForm({ source = 'hero', onSuccess }: LeadFormProps) 
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/lead', {
+      const response = await fetch('/api/lead-simple', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
