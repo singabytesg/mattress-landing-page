@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESSEN Mattress - Essential Quality Sleep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* ESSEN Brand Colors */
+            --primary-burnt: #A75421;
+            --primary-beige: #F3D7A7;
+            --background: #F8F5EA;
+            --secondary-taupe: #9E8C74;
+            --text-primary: #43362D;
+            --accent-blue: #56819C;
+            --accent-gray: #546773;
+
+            /* Extended Palette */
+            --surface: #FFFFFF;
+            --surface-soft: #FDFBF8;
+            --border-light: #E8DBC9;
+            --border-medium: #DCD6CF;
+            --text-secondary: #8A817C;
+
+            /* Semantic Colors */
+            --success: #6A994E;
+            --warning: #E5A443;
+            --info: #56819C;
+
+            /* Shadows & Effects */
+            --elevation-1: 0 2px 4px rgba(67, 54, 45, 0.08);
+            --elevation-2: 0 4px 8px rgba(67, 54, 45, 0.12);
+            --elevation-3: 0 8px 16px rgba(67, 54, 45, 0.16);
+            --elevation-4: 0 16px 32px rgba(67, 54, 45, 0.20);
+
+            /* Animation */
+            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: 0.15s ease-out;
+        }
+
+        /* Typography - Using Futura and Raleway as specified */
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Futura', 'Raleway', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .navigation.scrolled {
+            box-shadow: var(--elevation-2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .nav-brand {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-burnt);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            font-family: 'Futura', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color var(--transition-base);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-burnt);
+            transition: width var(--transition-base);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-burnt);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-burnt);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-base);
+        }
+
+        .nav-cta:hover {
+            background: #954A1C;
+            transform: translateY(-2px);
+            box-shadow: var(--elevation-2);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--background) 0%, var(--primary-beige) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(167, 84, 33, 0.05) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-burnt);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-burnt);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--primary-burnt);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #954A1C;
+            transform: translateY(-2px);
+            box-shadow: var(--elevation-3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-burnt);
+            border-color: var(--primary-burnt);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-burnt);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .mattress-visual {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-taupe) 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--elevation-3);
+        }
+
+        .mattress-layers {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .layer {
+            flex: 1;
+            position: relative;
+            transition: transform var(--transition-base);
+        }
+
+        .layer:hover {
+            transform: translateX(10px);
+        }
+
+        .layer:nth-child(1) { background: rgba(243, 215, 167, 0.8); }
+        .layer:nth-child(2) { background: rgba(158, 140, 116, 0.8); }
+        .layer:nth-child(3) { background: rgba(167, 84, 33, 0.8); }
+        .layer:nth-child(4) { background: rgba(84, 103, 115, 0.8); }
+
+        /* Value Proposition Section */
+        .value-props {
+            padding: 6rem 0;
+            background: var(--surface);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--elevation-3);
+            border-color: var(--primary-burnt);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-burnt), var(--primary-beige));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Product Showcase */
+        .products {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--elevation-4);
+        }
+
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary-beige), var(--secondary-taupe));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-burnt);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-name {
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-tagline {
+            color: var(--primary-burnt);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-current {
+            font-size: 2rem;
+            color: var(--primary-burnt);
+            font-weight: 700;
+        }
+
+        .price-original {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+        }
+
+        .product-cta {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-burnt);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-cta:hover {
+            background: #954A1C;
+            transform: translateY(-2px);
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 6rem 0;
+            background: var(--surface);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .tech-content {
+            padding: 2rem;
+        }
+
+        .tech-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .tech-features {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .tech-feature {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: 12px;
+            transition: all var(--transition-base);
+        }
+
+        .tech-feature:hover {
+            transform: translateX(10px);
+            background: var(--primary-beige);
+        }
+
+        .tech-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-burnt);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .tech-feature-content {
+            flex: 1;
+        }
+
+        .tech-feature-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .tech-feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tech-visual {
+            position: relative;
+            padding: 2rem;
+        }
+
+        .layers-diagram {
+            background: var(--surface-soft);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--elevation-2);
+        }
+
+        .diagram-layer {
+            background: linear-gradient(90deg, var(--primary-beige), var(--secondary-taupe));
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all var(--transition-base);
+        }
+
+        .diagram-layer:hover {
+            transform: scale(1.02);
+            box-shadow: var(--elevation-2);
+        }
+
+        .diagram-layer:nth-child(1) { background: linear-gradient(90deg, #F3D7A7, #E5C590); }
+        .diagram-layer:nth-child(2) { background: linear-gradient(90deg, #9E8C74, #8A7862); }
+        .diagram-layer:nth-child(3) { background: linear-gradient(90deg, #A75421, #954A1C); }
+        .diagram-layer:nth-child(4) { background: linear-gradient(90deg, #56819C, #4A708A); }
+
+        /* Trial Section */
+        .trial {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary-burnt), var(--accent-blue));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .trial-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trial-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trial-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .trial-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .trial-feature {
+            text-align: center;
+        }
+
+        .trial-feature-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .trial-feature-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 6rem 0;
+            background: var(--background);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .review-stars {
+            color: var(--primary-burnt);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-beige), var(--secondary-taupe));
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .author-verified {
+            font-size: 0.875rem;
+            color: var(--success);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: var(--primary-beige);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            grid-column: 1;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-burnt);
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--secondary-taupe);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h4 {
+            color: var(--primary-beige);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--secondary-taupe);
+            text-decoration: none;
+            transition: color var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-burnt);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(243, 215, 167, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trial-features {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-burnt);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all var(--transition-base);
+            box-shadow: var(--elevation-3);
+            font-size: 1.5rem;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--elevation-4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="nav-brand">ESSEN</a>
+                <ul class="nav-menu">
+                    <li><a href="#products" class="nav-link">Mattresses</a></li>
+                    <li><a href="#technology" class="nav-link">Technology</a></li>
+                    <li><a href="#trial" class="nav-link">100-Night Trial</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="https://essen.sg" class="nav-link">Furniture</a></li>
+                    <li><a href="#" class="nav-cta">Shop Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Experience <span class="highlight">Essential Quality</span><br>
+                        in Every Night's Sleep
+                    </h1>
+                    <p class="hero-subtitle">
+                        Crafted for Singapore's climate, designed for your comfort.
+                        Discover mattresses that combine luxury with accessibility,
+                        bringing you the best night's sleep without compromise.
+                    </p>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <div class="hero-feature-icon">✓</div>
+                            <span>100-Night Trial</span>
+                        </div>
+                        <div class="hero-feature">
+                            <div class="hero-feature-icon">✓</div>
+                            <span>10-Year Warranty</span>
+                        </div>
+                        <div class="hero-feature">
+                            <div class="hero-feature-icon">✓</div>
+                            <span>Free Delivery</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">Shop Mattresses</a>
+                        <a href="#technology" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="mattress-visual">
+                        <div class="mattress-layers">
+                            <div class="layer"></div>
+                            <div class="layer"></div>
+                            <div class="layer"></div>
+                            <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-props" id="values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The ESSEN Promise</h2>
+                <p class="section-subtitle">
+                    Upholding the best prices without compromising on quality
+                </p>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🏆</div>
+                    <h3 class="value-title">Essential Quality</h3>
+                    <p class="value-description">
+                        We focus on what truly matters - premium materials and
+                        construction that ensures quality sleep for years to come.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3 class="value-title">Effortless Experience</h3>
+                    <p class="value-description">
+                        From browsing to delivery, we make choosing and buying
+                        your perfect mattress seamless and enjoyable.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💝</div>
+                    <h3 class="value-title">Exceptional Service</h3>
+                    <p class="value-description">
+                        Our sleep experts are here to help you find the perfect
+                        fit for your home and sleeping style.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mattress Collection</h2>
+                <p class="section-subtitle">
+                    Thoughtfully designed for every sleeper and every home
+                </p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">ESSEN Essential</h3>
+                        <p class="product-tagline">Quality sleep made accessible</p>
+                        <ul class="product-features">
+                            <li>Medium-firm support</li>
+                            <li>Cooling gel memory foam</li>
+                            <li>Perfect for all sleep positions</li>
+                            <li>CertiPUR certified materials</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-current">$899</span>
+                            <span class="price-original">$1,299</span>
+                        </div>
+                        <button class="product-cta">Shop Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Premium Choice</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">ESSEN Luxe</h3>
+                        <p class="product-tagline">Indulge in luxury comfort</p>
+                        <ul class="product-features">
+                            <li>Plush Euro-top design</li>
+                            <li>Advanced cooling technology</li>
+                            <li>Zoned support system</li>
+                            <li>Natural latex layer</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-current">$1,499</span>
+                            <span class="price-original">$2,199</span>
+                        </div>
+                        <button class="product-cta">Shop Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Firm Support</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">ESSEN Ortho</h3>
+                        <p class="product-tagline">Optimal spinal alignment</p>
+                        <ul class="product-features">
+                            <li>Extra-firm support</li>
+                            <li>Orthopedic design</li>
+                            <li>Back pain relief</li>
+                            <li>High-density support core</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price-current">$1,299</span>
+                            <span class="price-original">$1,799</span>
+                        </div>
+                        <button class="product-cta">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Singapore-Optimized Technology</h2>
+                <p class="section-subtitle">
+                    Engineered for tropical comfort and lasting quality
+                </p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-content">
+                    <h3 class="tech-title">Advanced Layer System</h3>
+                    <p class="tech-description">
+                        Each ESSEN mattress features our proprietary 4-layer system,
+                        designed specifically for Singapore's humid climate. Experience
+                        the perfect balance of support, comfort, and temperature regulation.
+                    </p>
+                    <div class="tech-features">
+                        <div class="tech-feature">
+                            <div class="tech-feature-icon">❄️</div>
+                            <div class="tech-feature-content">
+                                <div class="tech-feature-title">Cooling Gel Layer</div>
+                                <div class="tech-feature-desc">Regulates temperature for tropical nights</div>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-feature-icon">🌊</div>
+                            <div class="tech-feature-content">
+                                <div class="tech-feature-title">Adaptive Memory Foam</div>
+                                <div class="tech-feature-desc">Contours to your body for pressure relief</div>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-feature-icon">💪</div>
+                            <div class="tech-feature-content">
+                                <div class="tech-feature-title">Support Core</div>
+                                <div class="tech-feature-desc">High-density base for lasting durability</div>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-feature-icon">🛡️</div>
+                            <div class="tech-feature-content">
+                                <div class="tech-feature-title">Anti-Microbial Cover</div>
+                                <div class="tech-feature-desc">Protects against dust mites and allergens</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-visual">
+                    <div class="layers-diagram">
+                        <div class="diagram-layer">Cooling Gel Memory Foam</div>
+                        <div class="diagram-layer">Adaptive Comfort Layer</div>
+                        <div class="diagram-layer">Transition Support Layer</div>
+                        <div class="diagram-layer">High-Density Support Core</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Section -->
+    <section class="trial" id="trial">
+        <div class="container">
+            <div class="trial-content">
+                <h2 class="trial-title">Sleep On It Risk-Free</h2>
+                <p class="trial-subtitle">Your comfort is our priority</p>
+                <div class="trial-features">
+                    <div class="trial-feature">
+                        <span class="trial-feature-number">100</span>
+                        <span class="trial-feature-label">Night Trial</span>
+                    </div>
+                    <div class="trial-feature">
+                        <span class="trial-feature-number">10</span>
+                        <span class="trial-feature-label">Year Warranty</span>
+                    </div>
+                    <div class="trial-feature">
+                        <span class="trial-feature-number">Free</span>
+                        <span class="trial-feature-label">Delivery & Returns</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" style="background: white; color: var(--primary-burnt);">
+                        Start Your Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">
+                    Join thousands of Singaporeans enjoying better sleep with ESSEN
+                </p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Best mattress I've ever owned! Perfect for Singapore's weather -
+                        stays cool all night. The quality is amazing for the price."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Tan</div>
+                            <div class="author-verified">✓ Verified Purchase</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "My back pain is gone! The support is incredible and delivery
+                        was seamless. Love that it's a local brand that understands our needs."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">David Lim</div>
+                            <div class="author-verified">✓ Verified Purchase</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "The 100-night trial gave me confidence to buy. Now I can't
+                        imagine sleeping on anything else. Worth every penny!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Michelle Wong</div>
+                            <div class="author-verified">✓ Verified Purchase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">ESSEN</div>
+                    <p class="footer-tagline">
+                        More than just a furniture store, ESSEN is your partner
+                        in creating the perfect home. Experience essential quality
+                        in every product.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">ESSEN Essential</a></li>
+                        <li><a href="#">ESSEN Luxe</a></li>
+                        <li><a href="#">ESSEN Ortho</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">100-Night Trial</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Care Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Visit Showroom</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About ESSEN</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2024 ESSEN. Making luxury accessible to everyone.</div>
+                <div>mattress.essen.sg</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('navigation');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (currentScroll > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.value-card, .product-card, .review-card, .tech-feature').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Interactive mattress layers
+        document.querySelectorAll('.layer, .diagram-layer').forEach(layer => {
+            layer.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px) scale(1.02)';
+            });
+            layer.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
