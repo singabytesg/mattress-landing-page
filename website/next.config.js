@@ -14,6 +14,12 @@ const nextConfig = {
     unoptimized: false,
   },
 
+  // Skip static generation for error pages to avoid styled-jsx issues
+  experimental: {
+    workerThreads: false,
+    cpus: 1
+  },
+
   // Environment variables
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,

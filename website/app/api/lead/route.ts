@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { appendToSheet } from '@/lib/google-sheets'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend only when API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(request: Request) {
   try {
@@ -25,7 +26,10 @@ export async function POST(request: Request) {
 
     // Send email notification to sales team
     try {
-      await resend.emails.send({
+      if (!resend) {
+        console.log('Resend not configured, skipping email')
+      } else {
+        await resend.emails.send({
         from: 'ESSEN Mattress <noreply@mattress.essen.sg>',
         to: process.env.SALES_EMAIL || 'sales@essen.sg',
         subject: `New Mattress Lead: ${name}`,
@@ -54,8 +58,9 @@ export async function POST(request: Request) {
             </p>
           </div>
         `,
-      })
-      console.log('Email notification sent successfully')
+        })
+        console.log('Email notification sent successfully')
+      }
     } catch (emailError) {
       console.error('Email send failed:', emailError)
       // Continue processing even if email fails
@@ -78,7 +83,10 @@ export async function POST(request: Request) {
 
     // Send confirmation email to customer
     try {
-      await resend.emails.send({
+      if (!resend) {
+        console.log('Resend not configured, skipping customer email')
+      } else {
+        await resend.emails.send({
         from: 'ESSEN Mattress <noreply@mattress.essen.sg>',
         to: email,
         subject: 'Thank You for Your Interest in ESSEN Mattresses',
@@ -132,8 +140,9 @@ export async function POST(request: Request) {
             </div>
           </div>
         `,
-      })
-      console.log('Customer confirmation email sent')
+        })
+        console.log('Customer confirmation email sent')
+      }
     } catch (confirmError) {
       console.error('Customer email failed:', confirmError)
       // Non-critical, continue
