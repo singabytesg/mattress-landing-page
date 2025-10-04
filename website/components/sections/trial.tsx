@@ -99,9 +99,6 @@ export default function Trial() {
             >
               Start Your 100-Night Trial
             </a>
-            <p className="text-sm opacity-80 mt-4">
-              No credit card required • No hidden fees
-            </p>
           </div>
         </div>
       </div>

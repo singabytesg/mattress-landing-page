@@ -122,7 +122,7 @@ export async function POST(request: Request) {
               </div>
 
               <p style="font-size: 16px; line-height: 1.6;">
-                Can't wait? Call us directly at <a href="tel:6591234567" style="color: #A75421;">+65 9123 4567</a>
+                Can't wait? Call us directly at <a href="tel:+6560190775" style="color: #A75421;">+65 6019 0775</a>
               </p>
 
               <div style="text-align: center; margin: 30px 0;">

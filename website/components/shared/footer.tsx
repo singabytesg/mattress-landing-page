@@ -3,6 +3,8 @@ import { siteConfig } from '@/config/site'
 import { MapPin, Phone, Mail } from 'lucide-react'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer style={{ backgroundColor: 'var(--text-primary)' }} className="text-white">
       <div className="container mx-auto px-4 py-12">
@@ -28,18 +30,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#essential" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                  ESSEN Essential
+                <Link href="#products" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                  ESSEN Ultra Plus
                 </Link>
               </li>
               <li>
-                <Link href="#luxe" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                  ESSEN Luxe
-                </Link>
-              </li>
-              <li>
-                <Link href="#ortho" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
-                  ESSEN Ortho
+                <Link href="#products" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                  ESSEN Ultra Max
                 </Link>
               </li>
               <li>
@@ -81,24 +78,38 @@ export default function Footer() {
 
           {/* Contact & Showrooms */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-lg" style={{ color: 'var(--primary-beige)' }}>
+            <Link
+              href="https://essen.sg/visit-us"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-lg hover:opacity-80 transition-opacity inline-block"
+              style={{ color: 'var(--primary-beige)' }}
+            >
               Visit Our Showrooms
-            </h4>
+            </Link>
             <div className="space-y-3">
               {siteConfig.showrooms.map((showroom) => (
-                <div key={showroom.id} className="text-sm">
+                <Link
+                  key={showroom.id}
+                  href="https://essen.sg/visit-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm hover:opacity-100 transition-opacity"
+                >
                   <div className="font-medium opacity-90">{showroom.name}</div>
                   <div className="opacity-70 text-xs">{showroom.address}</div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="pt-4 space-y-2">
               <a
-                href={`tel:${siteConfig.contact.phone}`}
+                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
-                +65 {siteConfig.contact.phone.slice(2)}
+                WhatsApp: +65 {siteConfig.contact.phone}
               </a>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
@@ -115,7 +126,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm opacity-60">
-              © 2024 ESSEN. Making luxury accessible to everyone.
+              © {currentYear} ESSEN. Making luxury accessible to everyone.
             </p>
             <p className="text-sm opacity-60">
               mattress.essen.sg

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image'
 import { Check, Star } from 'lucide-react'
 import { products } from '@/config/products'
 import { siteConfig } from '@/config/site'
@@ -24,26 +25,19 @@ export default function Products() {
                 key={product.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] group"
               >
-              {/* Product Image Placeholder */}
+              {/* Product Image */}
               <div className="relative h-64 overflow-hidden">
-                <div
-                  className="absolute inset-0 group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    background: `linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-taupe) 100%)`
-                  }}
+                <Image
+                  src={product.id === 'essential' ? '/images/ultraplus-hero.jpg' : '/images/ultramax-hero.jpg'}
+                  alt={product.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {product.badge && (
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ backgroundColor: 'var(--primary-burnt)' }}>
+                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white z-10" style={{ backgroundColor: 'var(--primary-burnt)' }}>
                     {product.badge}
                   </div>
                 )}
-                {/* Mattress Layers Visualization */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 flex flex-col">
-                  <div className="flex-1" style={{ backgroundColor: 'rgba(243, 215, 167, 0.6)' }} />
-                  <div className="flex-1" style={{ backgroundColor: 'rgba(158, 140, 116, 0.6)' }} />
-                  <div className="flex-1" style={{ backgroundColor: 'rgba(167, 84, 33, 0.6)' }} />
-                  <div className="flex-1" style={{ backgroundColor: 'rgba(84, 103, 115, 0.6)' }} />
-                </div>
               </div>
 
               {/* Product Content */}

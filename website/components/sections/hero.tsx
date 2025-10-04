@@ -110,12 +110,18 @@ export default function Hero() {
                 Visit our showroom for <strong className="text-orange-600">exclusive prices up to 40% off</strong>.
               </p>
 
-              {/* Video Placeholder */}
-              <div className="video-placeholder max-w-sm cursor-pointer">
-                <div className="video-placeholder-icon">
-                  <Play className="w-6 h-6" />
-                </div>
-                <span className="ml-3 font-semibold text-gray-700">Watch: The ESSEN Difference</span>
+              {/* Video */}
+              <div className="max-w-sm rounded-lg overflow-hidden shadow-lg">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                >
+                  <source src="https://assets-singabyte.sgp1.cdn.digitaloceanspaces.com/essen/video/ESSEN%20Showroom.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 

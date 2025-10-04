@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { Check, X, Star, Info } from 'lucide-react'
 import { products } from '@/config/products'
+import { siteConfig } from '@/config/site'
 
 interface ComparisonFeature {
   name: string
@@ -15,21 +17,21 @@ interface ComparisonFeature {
 const comparisonFeatures: ComparisonFeature[] = [
   // Comfort Features
   { name: 'Firmness Level', description: 'Sleep surface feel and comfort', essential: 'Medium-Firm', luxe: 'Plush', category: 'comfort' },
-  { name: 'Cooling Technology', description: 'Temperature regulation for Singapore climate', essential: 'High Density Gel Foam', luxe: 'Low Density Gel Foam', category: 'comfort' },
-  { name: 'Motion Isolation', description: 'Reduces partner movement transfer', essential: true, luxe: true, category: 'comfort' },
-  { name: 'Top Layer', description: 'Surface comfort layer', essential: 'Standard', luxe: 'Plush Tufted', category: 'comfort' },
+  { name: 'Cooling Technology', description: 'Temperature regulation for Singapore climate', essential: 'CoolFlow™ HD', luxe: 'CoolFlow™ Responsive', category: 'comfort' },
+  { name: 'Motion Isolation', description: 'Reduces partner movement transfer by 85%', essential: true, luxe: true, category: 'comfort' },
+  { name: 'Top Layer', description: 'Surface comfort layer', essential: 'GuardWeave™ Cover', luxe: 'PlushCloud™ Tufted', category: 'comfort' },
 
   // Support Features
-  { name: 'Spring System', description: 'Core support structure', essential: 'Bonnel Pocket Spring', luxe: 'Felt-Reinforced Bonnel', category: 'support' },
+  { name: 'Spring System', description: 'Core support structure', essential: 'PocketGuard™ Spring Core', luxe: 'PocketGuard™ Plus (FeltShield™)', category: 'support' },
   { name: 'Spinal Alignment', description: 'Maintains natural spine curvature', essential: true, luxe: true, category: 'support' },
   { name: 'Pressure Relief', description: 'Reduces pressure points', essential: 'Good', luxe: 'Excellent', category: 'support' },
-  { name: 'Sink Resistance', description: 'Prevents sagging over time', essential: true, luxe: true, category: 'support' },
+  { name: 'Sink Resistance', description: 'SinkShield™ prevents sagging for 10+ years', essential: true, luxe: true, category: 'support' },
 
   // Materials
   { name: 'Construction Type', description: 'Mattress build approach', essential: 'Hybrid Spring/Foam', luxe: 'Enhanced Hybrid', category: 'materials' },
-  { name: 'Memory Foam Type', description: 'Body-contouring foam layer', essential: 'High Density', luxe: 'Low Density (Responsive)', category: 'materials' },
-  { name: 'Durability Layer', description: 'Long-lasting support layers', essential: 'Sink-Resistant Foam', luxe: 'Felt + Sink-Resistant', category: 'materials' },
-  { name: 'Antimicrobial Cover', description: 'Hygienic fabric treatment', essential: true, luxe: true, category: 'materials' },
+  { name: 'Memory Foam Type', description: 'Body-contouring foam layer', essential: 'CoolFlow™ HD (3.5 lb/ft³)', luxe: 'CoolFlow™ Responsive (2.5 lb/ft³)', category: 'materials' },
+  { name: 'Durability Layer', description: 'Long-lasting support layers', essential: 'SinkShield™ Foundation', luxe: 'SinkShield™ + FeltShield™', category: 'materials' },
+  { name: 'Antimicrobial Cover', description: 'GuardWeave™ fabric with 99.9% protection', essential: true, luxe: true, category: 'materials' },
 
   // Warranty & Service
   { name: 'Sleep Trial', description: 'Risk-free trial period', essential: '100 nights', luxe: '100 nights', category: 'warranty' },
@@ -182,16 +184,16 @@ export default function ProductComparison() {
               <div className="hidden lg:block"></div>
               {selectedProductData.map((product) => (
                 <div key={product.id} className="text-center">
-                  {/* Product Image Placeholder */}
+                  {/* Product Image */}
                   <div className="relative h-32 mb-4 rounded-xl overflow-hidden">
-                    <div
-                      className="absolute inset-0 hover-scale"
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-taupe) 100%)`
-                      }}
+                    <Image
+                      src={product.id === 'essential' ? '/images/ultraplus-showroom-4.jpg' : '/images/ultramax-showroom-1.jpg'}
+                      alt={product.name}
+                      fill
+                      className="object-cover hover-scale"
                     />
                     {product.badge && (
-                      <div className="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-semibold text-white bg-orange-500">
+                      <div className="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-semibold text-white bg-orange-500 z-10">
                         {product.badge}
                       </div>
                     )}
@@ -279,7 +281,7 @@ export default function ProductComparison() {
                     Try {product.name}
                   </a>
                   <a
-                    href={`https://wa.me/6591234567?text=Hi! I'm interested in the ${product.name} mattress.`}
+                    href={`https://wa.me/${siteConfig.contact.whatsapp}?text=Hi! I'm interested in the ${product.name} mattress.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary-enhanced w-full justify-center text-sm"

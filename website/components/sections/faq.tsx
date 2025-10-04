@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 const faqs = [
   {
@@ -85,7 +86,7 @@ export default function FAQ() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || '6591234567'}`}
+                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
@@ -93,7 +94,7 @@ export default function FAQ() {
                 💬 Chat on WhatsApp
               </a>
               <a
-                href={`tel:${process.env.NEXT_PUBLIC_WHATSAPP || '6591234567'}`}
+                href={`tel:+65${siteConfig.contact.phone}`}
                 className="inline-block px-6 py-3 bg-white font-semibold rounded-lg hover:shadow-md transition-shadow"
                 style={{ color: 'var(--text-primary)' }}
               >

@@ -6,30 +6,30 @@ import { Snowflake, Wind, Shield, Heart, Play, TrendingUp, Zap } from 'lucide-re
 const technologies = [
   {
     icon: Snowflake,
-    title: "Cooling Gel Technology",
+    title: "ESSEN CoolFlow™ Technology",
     description: "Advanced gel-infused memory foam regulates temperature for Singapore's tropical nights",
-    details: "Reduces sleep temperature by up to 3°C compared to traditional foam",
+    details: "Gel infusion reduces sleep temperature by 3°C compared to traditional foam",
     benefit: "Better sleep quality in humid weather"
   },
   {
     icon: Wind,
-    title: "Breathable Cell Structure",
-    description: "Open-cell structure promotes airflow, preventing heat buildup and moisture",
+    title: "Open-Cell Structure",
+    description: "CoolFlow™ foam's open-cell structure promotes airflow, preventing heat buildup and moisture",
     details: "2x more breathable than standard memory foam",
     benefit: "Stays dry and fresh all night"
   },
   {
     icon: Shield,
-    title: "Antimicrobial Protection",
-    description: "Silver-ion technology prevents dust mites, bacteria, and allergens",
-    details: "Clinically proven to reduce allergens by 99.9%",
+    title: "ESSEN GuardWeave™ Protection",
+    description: "Silver-ion infused fabric prevents dust mites, bacteria, and allergens",
+    details: "Certified antimicrobial protection with 99.9% reduction",
     benefit: "Healthier sleep environment"
   },
   {
     icon: Heart,
-    title: "Hybrid Spring System",
-    description: "Bonnel Pocket Spring system provides pressure absorption and motion isolation",
-    details: "Reduces pressure points by 40% vs. traditional mattresses",
+    title: "ESSEN PocketGuard™ Spring System",
+    description: "700+ individually wrapped coils provide pressure absorption and motion isolation",
+    details: "Minimizes partner movement transfer by 85% vs. traditional mattresses",
     benefit: "Wake up refreshed without aches"
   },
 ]
@@ -190,9 +190,9 @@ export default function Technology() {
                 <div className="relative mb-8">
                   <div className="layer-stack">
                     {[
-                      { name: "Cooling Gel Memory Foam", thickness: "5cm", color: 'layer-comfort', description: "Temperature regulation" },
-                      { name: "Sink-Resistant Foam Layer", thickness: "4cm", color: 'layer-memory', description: "Durability" },
-                      { name: "Bonnel Pocket Spring Core", thickness: "15cm", color: 'layer-transition', description: "Motion isolation" },
+                      { name: "ESSEN CoolFlow™ Memory Foam", thickness: "5cm", color: 'layer-comfort', description: "Temperature regulation" },
+                      { name: "ESSEN SinkShield™ Layer", thickness: "4cm", color: 'layer-memory', description: "Durability" },
+                      { name: "ESSEN PocketGuard™ Spring Core", thickness: "15cm", color: 'layer-transition', description: "Motion isolation" },
                       { name: "Foundation Support Layer", thickness: "6cm", color: 'layer-support', description: "Stability" },
                     ].map((layer, index) => (
                       <div

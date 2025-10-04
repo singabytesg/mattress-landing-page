@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { ChevronRight, Thermometer, Shield, Zap, Heart } from 'lucide-react'
 
 interface MattressLayer {
@@ -21,58 +22,58 @@ interface MattressLayer {
 const mattressLayers: MattressLayer[] = [
   {
     id: 'cover',
-    name: 'Antimicrobial Cover',
+    name: 'ESSEN GuardWeave™ Cover',
     thickness: '1/4"',
-    description: 'Silver-infused fabric cover with cooling properties',
-    benefits: ['Temperature regulation', 'Antimicrobial protection', 'Soft touch'],
+    description: 'Silver-ion infused fabric that resists bacteria, dust mites, and allergens',
+    benefits: ['Certified antimicrobial protection (99.9% reduction)', 'Moisture-wicking for Singapore humidity', 'Soft-touch quilted surface'],
     color: 'layer-comfort',
     icon: <Shield className="w-5 h-5" />,
     details: {
-      material: 'Silver Microtencel™ Fabric',
-      density: 'Ultra-fine weave',
-      features: ['Hypoallergenic', 'Moisture-wicking', 'Machine washable']
+      material: 'ESSEN GuardWeave™ Antimicrobial Fabric',
+      density: 'Ultra-fine weave with silver-ion technology',
+      features: ['Hypoallergenic', 'Moisture-wicking', 'Breathable design']
     }
   },
   {
     id: 'comfort',
-    name: 'Cooling Gel Memory Foam',
+    name: 'ESSEN CoolFlow™ Memory Foam',
     thickness: '2-3"',
-    description: 'Cooling gel-infused memory foam for pressure relief and temperature control',
-    benefits: ['Pressure point relief', 'Body contouring', 'Temperature control'],
+    description: 'Advanced gel-infused memory foam that regulates temperature and contours to your body',
+    benefits: ['Gel infusion reduces sleep temperature by 3°C', 'Superior body contouring and pressure relief', 'Open-cell structure promotes airflow'],
     color: 'layer-memory',
     icon: <Heart className="w-5 h-5" />,
     details: {
-      material: 'Cooling Gel Memory Foam (High/Low Density)',
-      density: 'High Density (Ultra Plus) / Low Density Responsive (Ultra Max)',
-      features: ['Open-cell structure', 'Gel infusion', 'Quick recovery']
+      material: 'ESSEN CoolFlow™ HD (Ultra Plus) / CoolFlow™ Responsive (Ultra Max)',
+      density: '3.5 lb/ft³ High Density (Ultra Plus) / 2.5 lb/ft³ Responsive (Ultra Max)',
+      features: ['Open-cell structure', 'Cooling gel beads', '50% faster recovery (Ultra Max)']
     }
   },
   {
     id: 'transition',
-    name: 'Comfort Transition Layer',
+    name: 'ESSEN SinkShield™ Layer',
     thickness: '1-2"',
-    description: 'High density and sink-resistant foam layer for durability',
-    benefits: ['Smooth support transition', 'Enhanced durability', 'Motion isolation'],
+    description: 'High-density transition layer prevents sagging and extends mattress life',
+    benefits: ['Prevents body impressions and sagging for 10+ years', 'Smooth comfort-to-support transition', 'Enhanced durability'],
     color: 'layer-transition',
     icon: <Zap className="w-5 h-5" />,
     details: {
-      material: 'High Density Sink-Resistant Foam',
-      density: '2.5-3 lb/ft³',
-      features: ['Quick response', 'Prevents sagging', 'Long-lasting']
+      material: 'ESSEN SinkShield™ Foundation Foam',
+      density: '2.8 lb/ft³ high-density support foam',
+      features: ['Anti-sagging technology', 'Prevents body impressions', 'Long-lasting durability']
     }
   },
   {
     id: 'support',
-    name: 'Bonnel Pocket Spring System',
+    name: 'ESSEN PocketGuard™ Spring Core',
     thickness: '6-8"',
-    description: 'Bonnel pocket spring core for pressure absorption and motion isolation',
-    benefits: ['Spinal alignment', 'Pressure absorption', 'Motion isolation'],
+    description: 'Individually wrapped coils for motion isolation and pressure-absorbent support',
+    benefits: ['700+ individually wrapped coils work independently', 'Minimizes partner movement transfer by 85%', 'Pressure-absorbent design adapts to your body'],
     color: 'layer-support',
     icon: <Thermometer className="w-5 h-5" />,
     details: {
-      material: 'Bonnel Pocket Spring System',
-      density: 'Medium gauge steel coils',
-      features: ['Pressure absorbent', 'Isolates motion', 'Felt reinforcement (Ultra Max)']
+      material: 'ESSEN PocketGuard™ Spring Core (Ultra Plus) / PocketGuard™ Plus with FeltShield™ (Ultra Max)',
+      density: 'Premium-grade medium gauge steel coils',
+      features: ['Motion isolation', 'Pressure absorbent', 'FeltShield™ reinforcement (Ultra Max)']
     }
   },
   {
@@ -95,6 +96,8 @@ export default function LayerVisualization() {
   const [selectedLayer, setSelectedLayer] = useState<string>('comfort')
   const [isExploded, setIsExploded] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [selectedMattress, setSelectedMattress] = useState<'ultraplus' | 'ultramax'>('ultraplus')
+  const [showFactory, setShowFactory] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -130,7 +133,7 @@ export default function LayerVisualization() {
           </p>
 
           {/* Interactive Controls */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <button
               onClick={() => setIsExploded(!isExploded)}
               className={`px-6 py-3 rounded-lg font-semibold transition-all ${
@@ -142,17 +145,66 @@ export default function LayerVisualization() {
               {isExploded ? 'Stack View' : 'Exploded View'}
             </button>
 
-            {/* Video Placeholder Button */}
-            <div className="video-placeholder inline-flex items-center justify-center w-48 h-12 cursor-pointer">
-              <div className="video-placeholder-icon !w-8 !h-8">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <span className="ml-2 font-medium text-gray-700">Watch Construction</span>
-            </div>
+            {/* Factory Image Button */}
+            <button
+              onClick={() => setShowFactory(!showFactory)}
+              className="px-6 py-3 rounded-lg font-semibold transition-all bg-white text-gray-700 border-2 border-orange-200 hover:border-orange-300 flex items-center gap-2"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>View Construction</span>
+            </button>
+          </div>
+
+          {/* Mattress Toggle */}
+          <div className="flex justify-center gap-3">
+            <button
+              onClick={() => setSelectedMattress('ultraplus')}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                selectedMattress === 'ultraplus'
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-orange-300'
+              }`}
+            >
+              Ultra Plus
+            </button>
+            <button
+              onClick={() => setSelectedMattress('ultramax')}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                selectedMattress === 'ultramax'
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-orange-300'
+              }`}
+            >
+              Ultra Max
+            </button>
           </div>
         </div>
+
+        {/* Factory Image Modal/Display */}
+        {showFactory && (
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="relative w-full h-[400px] bg-white rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/ultramax-factory.png"
+                alt="ESSEN Mattress Construction"
+                fill
+                className="object-contain"
+              />
+              <button
+                onClick={() => setShowFactory(false)}
+                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -163,66 +215,81 @@ export default function LayerVisualization() {
                   Cross-Section View
                 </h3>
 
-                <div className="layer-stack relative">
-                  {mattressLayers.map((layer, index) => {
-                    const isSelected = selectedLayer === layer.id
-                    const explodedOffset = isExploded ? index * 12 : 0
-                    const layerHeight = `${Math.max(20, 40 - index * 5)}px`
+                {isExploded ? (
+                  /* Exploded View - Show Product Image */
+                  <div className="relative w-full h-[500px] bg-white rounded-xl overflow-hidden">
+                    <Image
+                      src={selectedMattress === 'ultraplus' ? '/images/ultraplus-expanded.jpg' : '/images/ultramax-full-expanded.jpg'}
+                      alt={`${selectedMattress === 'ultraplus' ? 'Ultra Plus' : 'Ultra Max'} Cross-Section`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ) : (
+                  /* Stack View - Show Layer Stack */
+                  <div className="layer-stack relative">
+                    {mattressLayers.map((layer, index) => {
+                      const isSelected = selectedLayer === layer.id
+                      const explodedOffset = isExploded ? index * 12 : 0
+                      const layerHeight = `${Math.max(20, 40 - index * 5)}px`
 
-                    return (
-                      <div
-                        key={layer.id}
-                        className={`mattress-layer ${layer.color} ${isSelected ? 'z-20 shadow-lg' : ''}`}
-                        style={{
-                          height: layerHeight,
-                          transform: `translateY(${explodedOffset}px)`,
-                          marginBottom: isExploded ? '12px' : '0',
-                          cursor: 'pointer',
-                          zIndex: isSelected ? 20 : 10 - index
-                        }}
-                        onClick={() => setSelectedLayer(layer.id)}
-                      >
-                        <div className="flex items-center justify-between w-full">
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                              {layer.icon}
+                      return (
+                        <div
+                          key={layer.id}
+                          className={`mattress-layer ${layer.color} ${isSelected ? 'z-20 shadow-lg' : ''}`}
+                          style={{
+                            height: layerHeight,
+                            transform: `translateY(${explodedOffset}px)`,
+                            marginBottom: isExploded ? '12px' : '0',
+                            cursor: 'pointer',
+                            zIndex: isSelected ? 20 : 10 - index
+                          }}
+                          onClick={() => setSelectedLayer(layer.id)}
+                        >
+                          <div className="flex items-center justify-between w-full">
+                            <div className="flex items-center gap-3">
+                              <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                {layer.icon}
+                              </div>
+                              <div>
+                                <div className="layer-label">{layer.name}</div>
+                                <div className="text-xs opacity-80 text-white">{layer.thickness}</div>
+                              </div>
                             </div>
-                            <div>
-                              <div className="layer-label">{layer.name}</div>
-                              <div className="text-xs opacity-80 text-white">{layer.thickness}</div>
-                            </div>
+                            {isSelected && (
+                              <div className="bg-white bg-opacity-20 rounded-full p-1">
+                                <ChevronRight className="w-4 h-4 text-white" />
+                              </div>
+                            )}
                           </div>
-                          {isSelected && (
-                            <div className="bg-white bg-opacity-20 rounded-full p-1">
-                              <ChevronRight className="w-4 h-4 text-white" />
-                            </div>
-                          )}
                         </div>
-                      </div>
-                    )
-                  })}
-                </div>
+                      )
+                    })}
+                  </div>
+                )}
 
                 {/* Layer Selector Buttons */}
-                <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {mattressLayers.map((layer) => (
-                    <button
-                      key={layer.id}
-                      onClick={() => setSelectedLayer(layer.id)}
-                      className={`p-3 rounded-lg border-2 transition-all text-left ${
-                        selectedLayer === layer.id
-                          ? 'border-orange-500 bg-orange-50'
-                          : 'border-gray-200 bg-white hover:border-orange-300'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className={`w-4 h-4 rounded ${layer.color}`}></div>
-                        <span className="font-medium text-sm">{layer.name}</span>
-                      </div>
-                      <p className="text-xs text-gray-600">{layer.thickness}</p>
-                    </button>
-                  ))}
-                </div>
+                {!isExploded && (
+                  <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {mattressLayers.map((layer) => (
+                      <button
+                        key={layer.id}
+                        onClick={() => setSelectedLayer(layer.id)}
+                        className={`p-3 rounded-lg border-2 transition-all text-left ${
+                          selectedLayer === layer.id
+                            ? 'border-orange-500 bg-orange-50'
+                            : 'border-gray-200 bg-white hover:border-orange-300'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className={`w-4 h-4 rounded ${layer.color}`}></div>
+                          <span className="font-medium text-sm">{layer.name}</span>
+                        </div>
+                        <p className="text-xs text-gray-600">{layer.thickness}</p>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 

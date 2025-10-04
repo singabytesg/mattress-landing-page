@@ -17,12 +17,12 @@ export const products: Product[] = [
     id: "essential",
     name: "ESSEN Ultra Plus",
     tagline: "Quality sleep made accessible",
-    description: "Hybrid construction combining Bonnel Pocket Spring System with multiple foam layers for balanced support and comfort in Singapore's climate.",
+    description: "Hybrid construction combining ESSEN PocketGuard™ Spring Core with advanced foam layers for balanced support and comfort in Singapore's climate.",
     features: [
-      "Bonnel Pocket Spring System with foam layers",
-      "Cooling Gel High Density Memory Foam",
-      "Pressure absorbent and motion isolation",
-      "High Density and Sink-Resistant foam",
+      "ESSEN PocketGuard™ Spring Core - 700+ individually wrapped coils",
+      "ESSEN CoolFlow™ HD Memory Foam - Gel infusion reduces sleep temperature by 3°C",
+      "ESSEN SinkShield™ Foundation Foam - Prevents sagging for 10+ years",
+      "Pressure absorbent and motion isolation technology",
     ],
     price: {
       original: 999,
@@ -35,11 +35,11 @@ export const products: Product[] = [
     id: "luxe",
     name: "ESSEN Ultra Max",
     tagline: "Your affordable upgrade to premium comfort",
-    description: "Enhanced comfort with plush tufted top and responsive cooling foam, featuring a reinforced Bonnel Pocket Spring system.",
+    description: "Enhanced comfort with ESSEN PlushCloud™ tufted top and responsive cooling foam, featuring ESSEN PocketGuard™ Plus with FeltShield™ Reinforcement.",
     features: [
-      "Plush Tufted Top for luxurious feel",
-      "Cooling Gel Low Density Memory Foam",
-      "Felt-reinforced Bonnel Pocket Spring",
+      "ESSEN PlushCloud™ Tufted Top - Hand-tufted for hotel-quality comfort",
+      "ESSEN CoolFlow™ Responsive Memory Foam - 50% faster recovery than standard foam",
+      "ESSEN PocketGuard™ Plus with FeltShield™ - Extends mattress life by 40%",
       "Enhanced anti-motion & pressure absorption",
     ],
     price: {

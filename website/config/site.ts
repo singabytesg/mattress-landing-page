@@ -8,14 +8,20 @@ export const siteConfig = {
     calendly: "https://calendly.com/essen-mattress/consultation",
   },
   showrooms: [
-    { id: "jurong", name: "Jurong Point", address: "1 Jurong West Central 2, #01-123, Singapore 648886" },
-    { id: "tampines", name: "Tampines Mall", address: "4 Tampines Central 5, #02-456, Singapore 529510" },
-    { id: "orchard", name: "Orchard Central", address: "181 Orchard Road, #03-789, Singapore 238896" },
+    {
+      id: "redhill",
+      name: "ESSEN Showroom",
+      address: "36 Jalan Kilang Barat, Singapore 159366",
+      hours: "Daily 11am-7pm",
+      mrt: "Redhill MRT (EW18) - 10 min walk",
+      parking: "Parking available on-site",
+      mapUrl: "https://maps.app.goo.gl/5YNjVuRRjCyGjNuY7"
+    },
   ],
   contact: {
-    phone: "6591234567",
-    email: "enquiry@mattress.essen.sg",
-    whatsapp: "6591234567",
+    phone: "60190775",
+    email: "enquiry@essen.sg",
+    whatsapp: "6560190775",
   },
 }
 
