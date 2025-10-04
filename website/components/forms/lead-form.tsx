@@ -138,21 +138,6 @@ export default function LeadForm({ source = 'hero', onSuccess }: LeadFormProps) 
         )}
       </div>
 
-      <div>
-        <select
-          {...register('showroom')}
-          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[var(--primary-burnt)] focus:outline-none transition-colors"
-          disabled={isSubmitting}
-        >
-          <option value="">Select Preferred Showroom (Optional)</option>
-          {siteConfig.showrooms.map((showroom) => (
-            <option key={showroom.id} value={showroom.id}>
-              {showroom.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <button
         type="submit"
         disabled={isSubmitting}
