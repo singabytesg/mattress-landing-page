@@ -35,51 +35,51 @@ const mattressLayers: MattressLayer[] = [
   },
   {
     id: 'comfort',
-    name: 'Gel Memory Foam',
+    name: 'Cooling Gel Memory Foam',
     thickness: '2-3"',
-    description: 'Cooling gel-infused memory foam for pressure relief',
+    description: 'Cooling gel-infused memory foam for pressure relief and temperature control',
     benefits: ['Pressure point relief', 'Body contouring', 'Temperature control'],
     color: 'layer-memory',
     icon: <Heart className="w-5 h-5" />,
     details: {
-      material: 'CertiPUR-US® Gel Memory Foam',
-      density: '4-5 lb/ft³',
+      material: 'Cooling Gel Memory Foam (High/Low Density)',
+      density: 'High Density (Ultra Plus) / Low Density Responsive (Ultra Max)',
       features: ['Open-cell structure', 'Gel infusion', 'Quick recovery']
     }
   },
   {
     id: 'transition',
-    name: 'Transition Layer',
+    name: 'Comfort Transition Layer',
     thickness: '1-2"',
-    description: 'Responsive foam layer for optimal support transition',
+    description: 'High density and sink-resistant foam layer for durability',
     benefits: ['Smooth support transition', 'Enhanced durability', 'Motion isolation'],
     color: 'layer-transition',
     icon: <Zap className="w-5 h-5" />,
     details: {
-      material: 'High-Resilience Polyfoam',
+      material: 'High Density Sink-Resistant Foam',
       density: '2.5-3 lb/ft³',
-      features: ['Quick response', 'Breathable', 'Long-lasting']
+      features: ['Quick response', 'Prevents sagging', 'Long-lasting']
     }
   },
   {
     id: 'support',
-    name: 'Support Core',
+    name: 'Bonnel Pocket Spring System',
     thickness: '6-8"',
-    description: 'High-density support core for proper spinal alignment',
-    benefits: ['Spinal alignment', 'Deep support', 'Edge reinforcement'],
+    description: 'Bonnel pocket spring core for pressure absorption and motion isolation',
+    benefits: ['Spinal alignment', 'Pressure absorption', 'Motion isolation'],
     color: 'layer-support',
     icon: <Thermometer className="w-5 h-5" />,
     details: {
-      material: 'High-Density Support Foam',
-      density: '1.8-2.2 lb/ft³',
-      features: ['Firm support', 'Breathable channels', 'Zoned support']
+      material: 'Bonnel Pocket Spring System',
+      density: 'Medium gauge steel coils',
+      features: ['Pressure absorbent', 'Isolates motion', 'Felt reinforcement (Ultra Max)']
     }
   },
   {
     id: 'base',
     name: 'Foundation Layer',
     thickness: '1-2"',
-    description: 'Durable foundation for mattress longevity',
+    description: 'Durable foundation for mattress longevity and stability',
     benefits: ['Structural integrity', 'Air circulation', 'Durability'],
     color: 'layer-base',
     icon: <Shield className="w-5 h-5" />,

@@ -17,12 +17,13 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] group"
-            >
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] group"
+              >
               {/* Product Image Placeholder */}
               <div className="relative h-64 overflow-hidden">
                 <div
@@ -119,8 +120,9 @@ export default function Products() {
                   </a>
                 </div>
               </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA */}

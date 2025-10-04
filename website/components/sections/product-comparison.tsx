@@ -9,34 +9,33 @@ interface ComparisonFeature {
   description: string
   essential: boolean | string
   luxe: boolean | string
-  ortho: boolean | string
   category: 'comfort' | 'support' | 'materials' | 'warranty'
 }
 
 const comparisonFeatures: ComparisonFeature[] = [
   // Comfort Features
-  { name: 'Firmness Level', description: 'Sleep surface feel and comfort', essential: 'Medium-Firm', luxe: 'Plush', ortho: 'Extra Firm', category: 'comfort' },
-  { name: 'Cooling Technology', description: 'Temperature regulation for Singapore climate', essential: 'Gel Memory Foam', luxe: 'Advanced Multi-Zone', ortho: 'Breathable Core', category: 'comfort' },
-  { name: 'Motion Isolation', description: 'Reduces partner movement transfer', essential: true, luxe: true, ortho: false, category: 'comfort' },
-  { name: 'Edge Support', description: 'Reinforced mattress edges', essential: 'Standard', luxe: 'Enhanced', ortho: 'Maximum', category: 'comfort' },
+  { name: 'Firmness Level', description: 'Sleep surface feel and comfort', essential: 'Medium-Firm', luxe: 'Plush', category: 'comfort' },
+  { name: 'Cooling Technology', description: 'Temperature regulation for Singapore climate', essential: 'High Density Gel Foam', luxe: 'Low Density Gel Foam', category: 'comfort' },
+  { name: 'Motion Isolation', description: 'Reduces partner movement transfer', essential: true, luxe: true, category: 'comfort' },
+  { name: 'Top Layer', description: 'Surface comfort layer', essential: 'Standard', luxe: 'Plush Tufted', category: 'comfort' },
 
   // Support Features
-  { name: 'Zoned Support', description: 'Targeted support for different body regions', essential: '3-Zone', luxe: '7-Zone', ortho: '5-Zone Ortho', category: 'support' },
-  { name: 'Spinal Alignment', description: 'Maintains natural spine curvature', essential: true, luxe: true, ortho: true, category: 'support' },
-  { name: 'Pressure Relief', description: 'Reduces pressure points', essential: 'Good', luxe: 'Excellent', ortho: 'Moderate', category: 'support' },
-  { name: 'Back Pain Relief', description: 'Designed for back pain sufferers', essential: false, luxe: true, ortho: true, category: 'support' },
+  { name: 'Spring System', description: 'Core support structure', essential: 'Bonnel Pocket Spring', luxe: 'Felt-Reinforced Bonnel', category: 'support' },
+  { name: 'Spinal Alignment', description: 'Maintains natural spine curvature', essential: true, luxe: true, category: 'support' },
+  { name: 'Pressure Relief', description: 'Reduces pressure points', essential: 'Good', luxe: 'Excellent', category: 'support' },
+  { name: 'Sink Resistance', description: 'Prevents sagging over time', essential: true, luxe: true, category: 'support' },
 
   // Materials
-  { name: 'Memory Foam Layer', description: 'Body-contouring foam layer', essential: '2 inches', luxe: '3 inches', ortho: '1.5 inches', category: 'materials' },
-  { name: 'Natural Latex', description: 'Eco-friendly latex layer', essential: false, luxe: true, ortho: false, category: 'materials' },
-  { name: 'CertiPUR Certified', description: 'Safe, non-toxic materials', essential: true, luxe: true, ortho: true, category: 'materials' },
-  { name: 'Antimicrobial Cover', description: 'Hygienic fabric treatment', essential: true, luxe: true, ortho: true, category: 'materials' },
+  { name: 'Construction Type', description: 'Mattress build approach', essential: 'Hybrid Spring/Foam', luxe: 'Enhanced Hybrid', category: 'materials' },
+  { name: 'Memory Foam Type', description: 'Body-contouring foam layer', essential: 'High Density', luxe: 'Low Density (Responsive)', category: 'materials' },
+  { name: 'Durability Layer', description: 'Long-lasting support layers', essential: 'Sink-Resistant Foam', luxe: 'Felt + Sink-Resistant', category: 'materials' },
+  { name: 'Antimicrobial Cover', description: 'Hygienic fabric treatment', essential: true, luxe: true, category: 'materials' },
 
   // Warranty & Service
-  { name: 'Sleep Trial', description: 'Risk-free trial period', essential: '100 nights', luxe: '100 nights', ortho: '100 nights', category: 'warranty' },
-  { name: 'Warranty Period', description: 'Manufacturing defect coverage', essential: '10 years', luxe: '10 years', ortho: '10 years', category: 'warranty' },
-  { name: 'Free Delivery', description: 'Island-wide delivery included', essential: true, luxe: true, ortho: true, category: 'warranty' },
-  { name: 'Free Setup', description: 'Professional installation service', essential: true, luxe: true, ortho: true, category: 'warranty' },
+  { name: 'Sleep Trial', description: 'Risk-free trial period', essential: '100 nights', luxe: '100 nights', category: 'warranty' },
+  { name: 'Warranty Period', description: 'Manufacturing defect coverage', essential: '10 years', luxe: '10 years', category: 'warranty' },
+  { name: 'Free Delivery', description: 'Island-wide delivery included', essential: true, luxe: true, category: 'warranty' },
+  { name: 'Free Setup', description: 'Professional installation service', essential: true, luxe: true, category: 'warranty' },
 ]
 
 const categoryIcons = {
@@ -100,8 +99,6 @@ export default function ProductComparison() {
         return 'Best for most sleepers'
       case 'luxe':
         return 'Ultimate comfort'
-      case 'ortho':
-        return 'Firm support specialist'
       default:
         return ''
     }
@@ -130,7 +127,7 @@ export default function ProductComparison() {
                       setSelectedProducts(prev => prev.filter(id => id !== product.id))
                     }
                   } else {
-                    if (selectedProducts.length < 3) {
+                    if (selectedProducts.length < 2) {
                       setSelectedProducts(prev => [...prev, product.id])
                     }
                   }
@@ -178,10 +175,10 @@ export default function ProductComparison() {
         </div>
 
         {/* Comparison Table */}
-        <div className={`comparison-container max-w-6xl mx-auto ${isVisible ? 'reveal-scale revealed' : 'reveal-scale'}`}>
+        <div className={`comparison-container max-w-5xl mx-auto ${isVisible ? 'reveal-scale revealed' : 'reveal-scale'}`}>
           {/* Product Headers */}
           <div className="bg-white border-b border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-6">
               <div className="hidden lg:block"></div>
               {selectedProductData.map((product) => (
                 <div key={product.id} className="text-center">
@@ -245,7 +242,7 @@ export default function ProductComparison() {
                   {categoryFeatures.map((feature, index) => (
                     <div
                       key={`${categoryKey}-${index}`}
-                      className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-4 hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-b-0"
+                      className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-b-0"
                     >
                       <div className="lg:pr-4">
                         <div className="flex items-start gap-2">
@@ -271,7 +268,7 @@ export default function ProductComparison() {
 
           {/* Action Buttons */}
           <div className="bg-gray-50 p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div className="hidden lg:block"></div>
               {selectedProductData.map((product) => (
                 <div key={product.id} className="space-y-2">

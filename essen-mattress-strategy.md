@@ -92,28 +92,17 @@ Integrations:
 #### Product Line Architecture
 
 **ESSEN Ultra Plus** (Entry-Level)
-- Price: $799-$999
+- Price: from $788
 - Target: First-time buyers, budget-conscious
-- Key Feature: Best value for money
+- Key Feature: Hybrid Construction: Combines a Bonnel Pocket Spring System with multiple foam layers for balanced support and comfort. Cooling Comfort: Features a Cooling Gel High Density Memory Foam layer to help regulate temperature during sleep. Pressure Relief & Motion Isolation: The spring system is designed to be pressure absorbent and isolate motion, making it ideal for couples. Durable Support: Built with High Density and Sink-Resistant foam layers to ensure longevity and prevent sagging.
 - Tagline: "Quality sleep made accessible"
 
-**ESSEN Balance** (Mid-Tier)
-- Price: $1,299-$1,499
-- Target: Upgraders, couples
-- Key Feature: Perfect balance of comfort and support
-- Tagline: "Where comfort meets support"
+**ESSEN Ultra Max** (Mid-Tier)
+- Price: from $1,088
+- Target: Sleepers looking for an upgrade, enhanced comfort features, and a plusher feel compared to entry-level models.
+- Key Feature: Plush Tufted Top: Features a tufted foam top layer for a more luxurious, cushioned feel. Responsive Cooling Foam: Uses Cooling Gel Low Density Memory Foam, which offers a softer, more responsive surface that adapts quickly to movement. Enhanced Spring System: The Bonnel Pocket Spring system is reinforced with layers of felt for improved durability and to insulate you from the springs. Anti-Motion & Pressure Absorption: The core spring system is designed to minimize motion transfer and absorb pressure for an undisturbed sleep.
+- Tagline: "Your affordable upgrade to premium comfort."
 
-**ESSEN Ultra Max** (Premium)
-- Price: $1,799-$2,299
-- Target: Luxury seekers, master bedrooms
-- Key Feature: Hotel-quality luxury at home
-- Tagline: "Indulge in five-star comfort"
-
-**ESSEN Cool** (Specialty)
-- Price: $1,499-$1,799
-- Target: Hot sleepers, Singapore climate
-- Key Feature: Advanced cooling technology
-- Tagline: "Stay cool in Singapore's heat"
 
 ### 3.3 Content Pillars
 

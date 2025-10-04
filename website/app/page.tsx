@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <Hero />
       <ValueProps />
+      <Products />
       <ProductComparison />
       <LayerVisualization />
-      <Products />
       <Technology />
       <Trial />
       <Booking />

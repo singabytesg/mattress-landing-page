@@ -27,8 +27,8 @@ const technologies = [
   },
   {
     icon: Heart,
-    title: "Pressure Relief Zones",
-    description: "7-zone support adapts to your body for optimal spinal alignment",
+    title: "Hybrid Spring System",
+    description: "Bonnel Pocket Spring system provides pressure absorption and motion isolation",
     details: "Reduces pressure points by 40% vs. traditional mattresses",
     benefit: "Wake up refreshed without aches"
   },
@@ -183,7 +183,7 @@ export default function Technology() {
             <div className={`${isVisible ? 'reveal-right revealed' : 'reveal-right'}`}>
               <div className="bg-white rounded-2xl shadow-2xl p-8 hover-lift">
                 <h3 className="text-2xl font-bold mb-6 text-center" style={{ color: 'var(--text-primary)' }}>
-                  Advanced 4-Layer System
+                  Hybrid Construction System
                 </h3>
 
                 {/* Interactive Layer Stack */}
@@ -191,9 +191,9 @@ export default function Technology() {
                   <div className="layer-stack">
                     {[
                       { name: "Cooling Gel Memory Foam", thickness: "5cm", color: 'layer-comfort', description: "Temperature regulation" },
-                      { name: "Adaptive Comfort Layer", thickness: "7cm", color: 'layer-memory', description: "Body contouring" },
-                      { name: "Transition Support Layer", thickness: "5cm", color: 'layer-transition', description: "Motion isolation" },
-                      { name: "High-Density Support Core", thickness: "13cm", color: 'layer-support', description: "Deep support" },
+                      { name: "Sink-Resistant Foam Layer", thickness: "4cm", color: 'layer-memory', description: "Durability" },
+                      { name: "Bonnel Pocket Spring Core", thickness: "15cm", color: 'layer-transition', description: "Motion isolation" },
+                      { name: "Foundation Support Layer", thickness: "6cm", color: 'layer-support', description: "Stability" },
                     ].map((layer, index) => (
                       <div
                         key={index}
@@ -232,8 +232,8 @@ export default function Technology() {
                     <div className="text-sm text-gray-600">Cooling Effect</div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-purple-600">7-Zone</div>
-                    <div className="text-sm text-gray-600">Support System</div>
+                    <div className="text-2xl font-bold text-purple-600">Hybrid</div>
+                    <div className="text-sm text-gray-600">Spring + Foam</div>
                   </div>
                 </div>
 

@@ -11,8 +11,8 @@ const testimonials = [
   },
   {
     name: "David Lim",
-    role: "Verified Purchase - ESSEN Ortho",
-    content: "My back pain is completely gone after switching to ESSEN. The consultation was professional and the exclusive showroom price saved me over $600!",
+    role: "Verified Purchase - ESSEN Ultra Max",
+    content: "My back pain is completely gone after switching to ESSEN Ultra Max. The plush comfort combined with excellent support is perfect. The consultation was professional and the exclusive showroom price saved me over $300!",
     rating: 5,
   },
   {
