@@ -5,7 +5,7 @@ import { Star, Quote } from 'lucide-react'
 const testimonials = [
   {
     name: "Sarah Tan",
-    role: "Verified Purchase - ESSEN Luxe",
+    role: "Verified Purchase - ESSEN Ultra Max",
     content: "Best mattress I've ever owned! The showroom experience was fantastic - they helped me find the perfect firmness. The cooling technology really works in our Singapore weather.",
     rating: 5,
   },
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: "Michelle & James Wong",
-    role: "Verified Purchase - ESSEN Essential",
+    role: "Verified Purchase - ESSEN Ultra Plus",
     content: "We bought the entire bedroom set during our visit. The bundle deal was amazing and the quality exceeded our expectations. Highly recommend visiting their showroom!",
     rating: 5,
   },

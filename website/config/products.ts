@@ -15,7 +15,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "essential",
-    name: "ESSEN Essential",
+    name: "ESSEN Ultra Plus",
     tagline: "Quality sleep made accessible",
     description: "Our signature mattress designed for Singapore's climate with cooling technology and balanced support.",
     features: [
@@ -33,7 +33,7 @@ export const products: Product[] = [
   },
   {
     id: "luxe",
-    name: "ESSEN Luxe",
+    name: "ESSEN Ultra Max",
     tagline: "Indulge in luxury comfort",
     description: "Premium materials and advanced technology for the ultimate sleep experience.",
     features: [

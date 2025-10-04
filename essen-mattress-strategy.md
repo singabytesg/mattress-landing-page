@@ -91,7 +91,7 @@ Integrations:
 
 #### Product Line Architecture
 
-**ESSEN Essential** (Entry-Level)
+**ESSEN Ultra Plus** (Entry-Level)
 - Price: $799-$999
 - Target: First-time buyers, budget-conscious
 - Key Feature: Best value for money
@@ -103,7 +103,7 @@ Integrations:
 - Key Feature: Perfect balance of comfort and support
 - Tagline: "Where comfort meets support"
 
-**ESSEN Luxe** (Premium)
+**ESSEN Ultra Max** (Premium)
 - Price: $1,799-$2,299
 - Target: Luxury seekers, master bedrooms
 - Key Feature: Hotel-quality luxury at home
