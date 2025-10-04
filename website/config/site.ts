@@ -27,7 +27,7 @@ export const siteConfig = {
 
 export const promotions = {
   hero: {
-    headline: "First 100 Customers Get 30% Off",
+    headline: "Exclusive Group Buy Offers!",
     subheadline: "Plus FREE Pillows Worth $299",
     endDate: new Date("2024-12-31"),
   },

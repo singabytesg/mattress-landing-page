@@ -54,17 +54,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#trial" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                <Link href="/sleep-trial" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                   100-Night Trial
                 </Link>
               </li>
               <li>
-                <Link href="#warranty" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                <Link href="/warranty" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                   10-Year Warranty
                 </Link>
               </li>
               <li>
-                <Link href="#delivery" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                <Link href="https://essen.sg/terms/delivery-information" target="_blank" rel="noopener noreferrer" className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                   Free Delivery
                 </Link>
               </li>
@@ -125,9 +125,19 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm opacity-60">
-              © {currentYear} ESSEN. Making luxury accessible to everyone.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <p className="text-sm opacity-60">
+                © {currentYear} ESSEN. Making luxury accessible to everyone.
+              </p>
+              <div className="flex gap-4 text-sm opacity-60">
+                <Link href="https://essen.sg/terms-of-use" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                  Terms of Use
+                </Link>
+                <Link href="https://essen.sg/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
             <p className="text-sm opacity-60">
               mattress.essen.sg
             </p>

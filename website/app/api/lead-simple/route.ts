@@ -6,7 +6,8 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, showroom } = body
+    const { name, email, phone } = body
+    const showroom = 'ESSEN Showroom (Redhill)' // Default to only showroom
     const timestamp = new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' })
 
     // Always log leads for backup

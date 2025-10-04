@@ -77,17 +77,6 @@ export default function Navigation() {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-4">
-            <a
-              href={`tel:${siteConfig.contact.phone}`}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all hover:opacity-90"
-              style={{
-                backgroundColor: 'var(--primary-beige)',
-                color: 'var(--text-primary)'
-              }}
-            >
-              <Phone className="w-4 h-4" />
-              <span className="hidden lg:inline">Call Now</span>
-            </a>
             <Link
               href="#booking"
               className="px-6 py-2 rounded-lg font-semibold text-white transition-all hover:shadow-lg hover:scale-105"

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 
 const faqs = [
@@ -11,7 +12,8 @@ const faqs = [
   },
   {
     question: "How does the 100-night trial work?",
-    answer: "After purchasing from our showroom, we deliver your mattress for free. You have 100 nights to sleep on it at home. If you're not completely satisfied, we'll pick it up at no charge and provide a full refund. No questions asked, no hidden fees."
+    answer: "After purchasing from our showroom, we deliver your mattress for free. You have 100 nights to sleep on it at home. If you're not completely satisfied, we'll pick it up at no charge and provide a full refund. No questions asked, no hidden fees.",
+    link: { text: "See terms and conditions", href: "/sleep-trial" }
   },
   {
     question: "What makes ESSEN mattresses suitable for Singapore's climate?",
@@ -73,6 +75,15 @@ export default function FAQ() {
                     <p className="text-sm leading-relaxed opacity-80" style={{ color: 'var(--text-primary)' }}>
                       {faq.answer}
                     </p>
+                    {faq.link && (
+                      <Link
+                        href={faq.link.href}
+                        className="inline-block mt-3 text-sm font-medium hover:underline"
+                        style={{ color: 'var(--primary-burnt)' }}
+                      >
+                        {faq.link.text} →
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>

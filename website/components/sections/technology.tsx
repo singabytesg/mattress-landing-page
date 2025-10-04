@@ -71,21 +71,10 @@ export default function Technology() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
             Singapore-Optimized Sleep Technology
           </h2>
-          <p className="text-lg opacity-80 mb-8 max-w-3xl mx-auto" style={{ color: 'var(--text-primary)' }}>
+          <p className="text-lg opacity-80 max-w-3xl mx-auto" style={{ color: 'var(--text-primary)' }}>
             Every ESSEN mattress features our proprietary technology system,
             engineered specifically for Singapore's tropical climate and lifestyle
           </p>
-
-          {/* Video Showcase */}
-          <div className="video-placeholder max-w-lg mx-auto cursor-pointer">
-            <div className="video-placeholder-icon">
-              <Play className="w-8 h-8" />
-            </div>
-            <div className="ml-4">
-              <div className="font-semibold text-gray-700">Manufacturing Process</div>
-              <div className="text-sm text-gray-600">See how we craft each mattress</div>
-            </div>
-          </div>
         </div>
 
         <div className="max-w-6xl mx-auto">

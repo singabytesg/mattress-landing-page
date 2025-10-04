@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Check, Play, Star, ArrowDown } from 'lucide-react'
 import LeadForm from '@/components/forms/lead-form'
-import { promotions } from '@/config/site'
+import { promotions, siteConfig } from '@/config/site'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -70,13 +70,19 @@ export default function Hero() {
           <div className={`space-y-8 ${isVisible ? 'stagger-children revealed' : 'stagger-children'}`}>
             {/* Promotion Badge */}
             <div className="inline-block">
-              <div className="px-6 py-3 rounded-full text-sm font-semibold hover-glow transition-all cursor-pointer" style={{
-                background: 'linear-gradient(135deg, var(--primary-beige) 0%, #e8c288 100%)',
-                color: 'var(--text-primary)',
-                boxShadow: 'var(--shadow-md)'
-              }}>
+              <a
+                href={`https://wa.me/${siteConfig.contact.whatsapp}?text=Hi! I'm interested in the Exclusive Group Buy Offers!`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-full text-sm font-semibold hover-glow transition-all cursor-pointer inline-block"
+                style={{
+                  background: 'linear-gradient(135deg, var(--primary-beige) 0%, #e8c288 100%)',
+                  color: 'var(--text-primary)',
+                  boxShadow: 'var(--shadow-md)'
+                }}
+              >
                 ✨ {promotions.hero.headline}
-              </div>
+              </a>
             </div>
 
             {/* Main Headline */}
@@ -99,7 +105,6 @@ export default function Hero() {
                   ))}
                 </div>
                 <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>4.8/5</span>
-                <span className="text-gray-600">• 1,200+ reviews</span>
               </div>
             </div>
 

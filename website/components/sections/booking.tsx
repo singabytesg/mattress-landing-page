@@ -351,28 +351,6 @@ export default function Booking() {
             </div>
           </div>
 
-          {/* Showroom locations quick access */}
-          <div className="border-t pt-8 mt-8" style={{ borderColor: 'rgba(167, 84, 33, 0.1)' }}>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
-              Visit Our Showrooms
-            </h3>
-            <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {siteConfig.showrooms.map((showroom) => (
-                <div
-                  key={showroom.id}
-                  className="p-4 rounded-lg border transition-all hover:shadow-md"
-                  style={{
-                    backgroundColor: 'var(--background)',
-                    borderColor: 'rgba(167, 84, 33, 0.1)',
-                    color: 'var(--text-primary)'
-                  }}
-                >
-                  <div className="font-medium mb-1">{showroom.name}</div>
-                  <div className="text-sm opacity-70">{showroom.address}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
